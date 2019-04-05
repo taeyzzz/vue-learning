@@ -3,8 +3,13 @@
     <div class="store">
       {{ message }}
     </div>
-    <div>
-      {{ text }}
+    <div class="list-book-container" v-for="data in listBooks" @click="() => handleClicked(data)">
+      <div>
+        {{ data.name}}
+      </div>
+      <div>
+        {{ data.price}}
+      </div>
     </div>
   </div>
 </template>
@@ -20,14 +25,19 @@ export default {
   },
   data: () => {
     return {
-      text: "home page text"
+      listBooks: [
+        {name: "a", price: 1},
+        {name: "b", price: 2},
+        {name: "c", price: 3},
+        {name: "d", price: 4},
+        {name: "e", price: 5},
+      ]
     }
   },
-  // methods: mapActions('cart', [
-  //   'addProductToCart'
-  // ]),
-  created () {
-    console.log('created');
+  methods: {
+    handleClicked(obj){
+      console.log(obj);
+    }
   }
 }
 </script>
