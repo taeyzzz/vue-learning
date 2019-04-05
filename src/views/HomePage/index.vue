@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div>
+    <div class="store">
       {{ message }}
     </div>
     <div>
@@ -16,7 +16,7 @@ export default {
   computed: {
     ...mapState({
       message: state => state.homepageStore.message
-    })
+    }),
   },
   data: () => {
     return {
@@ -33,6 +33,8 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-
+<style lang="scss" scoped>
+  .store{
+    background: red;
+  }
 </style>
