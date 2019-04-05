@@ -1,12 +1,34 @@
 <template>
   <div>
-    Home page
+    <div>
+      {{ message }}
+    </div>
+    <div>
+      {{ text }}
+    </div>
   </div>
 </template>
 
 <script>
-export default {
+import { mapState, mapActions } from 'vuex'
 
+export default {
+  computed: {
+    ...mapState({
+      message: state => state.homepageStore.message
+    })
+  },
+  data: () => {
+    return {
+      text: "home page text"
+    }
+  },
+  // methods: mapActions('cart', [
+  //   'addProductToCart'
+  // ]),
+  created () {
+    console.log('created');
+  }
 }
 </script>
 
