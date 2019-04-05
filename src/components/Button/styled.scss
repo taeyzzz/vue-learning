@@ -1,0 +1,9 @@
+.button{
+  width: 100%;
+  margin: 0px;
+  color: white;
+  background: #2196f3 !important;
+  &.error{
+    background: red !important;
+  }
+}

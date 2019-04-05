@@ -46,3 +46,39 @@ export function patch(url, data) {
 }
 
 export function checkHttpStatus(response) {
+  if (response.status >= 200 && response.status < 300) {
+    return response.body
+  }
+     else {
+    var error = new Error(response.statusText)
+    error.response = response.body
+    error.status = response.status
+    throw error
+  }
+}
+
+export function parseJSON(response) {
+  return response.json()
+    .then(function (body) {
+      return {
+        status: response.status,
+        statusText: response.statusText,
+        body: body
+      }
+    })
+    .catch(function(e) {
+      return response;
+    })
+}
+
+export const storage = {
+  get: function (k) {
+    return localStorage.getItem(k);
+  },
+  set: function (k, v) {
+    localStorage.setItem(k, v);
+  },
+  remove: function (k) {
+    localStorage.removeItem(k)
+  }
+}
