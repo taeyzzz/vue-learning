@@ -2,6 +2,6 @@
   <router-view/>
 </template>
 
-<style>
-
+<style lang="scss">
+  @import './global-styled.scss';
 </style>
