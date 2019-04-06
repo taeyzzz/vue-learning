@@ -1,6 +1,14 @@
-.store{
-  background: red;
-}
-.list-book-container{
-  display: flex;
+.home-page{
+  .form-container{
+    width: 500px;
+    height: 350px;
+  }
+  .todo-list-container{
+    .todo-container{
+      display: flex;
+      .title{
+        margin-right: 10px;
+      }
+    }
+  }
 }

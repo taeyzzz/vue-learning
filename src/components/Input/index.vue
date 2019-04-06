@@ -4,6 +4,7 @@
     @input="handleChanged"
     @keypress="handleKeyPressed"
     class="input"
+    :value="value"
   />
 </template>
 
